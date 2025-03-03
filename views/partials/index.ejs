@@ -1,0 +1,38 @@
+<!-- <html lang = "en">
+<%- include('partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('partials/nav.ejs') %>
+    </header>
+    <main>
+        <%- include('partials/main.ejs') %>
+    </main>
+    <footer>
+        <%- include('partials/footer.ejs') %>
+    </footer> -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <% include('./partials/head.ejs') %>
+    </head>
+    <body>
+        <% include('./partials/nav.ejs') %>
+    
+        <div class="tickets content">
+            <h2>All Tickets</h2>
+    
+            <% if (tickets.length > 0) { %>
+                <% tickets.forEach(ticket => { %>
+                    <h3 class="title"><%= ticket.title %></h3>
+                    <p class="description"><%= ticket.description %></p>
+                <% }) %>
+            <% } else { %>
+                <p>There are no tickets to display...</p>
+            <% } %>
+        </div>
+    
+        <% include('./partials/footer.ejs') %>
+    </body>
+    </html>
+    
